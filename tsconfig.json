@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "outDir": "built", // where to put the compiled JS files
+    "target": "ES2020", // which level of JS support to target
+    "module": "CommonJS", // which system for the program AMD, UMD, System, CommonJS
+    "jsx": "react-jsx",
+    "sourceMap": false,
+    // Recommended: Compiler complains about expressions implicitly typed as 'any'
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "paths": {
+      "@api/*": [
+        "./@api/*"
+      ],
+      "@/*": [
+        "./*"
+      ],
+    },
+    "esModuleInterop": true
+  },
+  "files": [
+    "./node_modules/@kintone/dts-gen/kintone.d.ts",
+    "types/contracts.d.ts",
+    "types/employees.d.ts",
+    "types/projTypes.d.ts",
+    "types/projects.d.ts",
+    "types/stores.d.ts",
+    "types/unissuedInvReminder.d.ts",
+  ],
+  "include": [
+    "src",
+  ], // which files to compile
+  "exclude": [
+    "node_modules"
+  ], // which files to skip
+}
