@@ -1,11 +1,7 @@
-import {Button} from '@mui/material';
+import {Typography} from '@mui/material';
 
-export const AlertStop = ({
-	handleClick,
-}: {
-	handleClick: () => void;
-}) => (
-	<Button>
-
-	</Button>
+export const AlertStop = () => (
+	<Typography>
+		アラート停止
+	</Typography>
 );
