@@ -6,7 +6,7 @@ import {onChangeFieldHandler} from './eventHandlers/onChangeFieldHandler';
 
 const watchFieldKeys: KeyOfDB[] = [
 	'reminderDate',
-	'expectedPaymentDate',
+	'expectedCreateInvoiceDate',
 ];
 
 (() => {

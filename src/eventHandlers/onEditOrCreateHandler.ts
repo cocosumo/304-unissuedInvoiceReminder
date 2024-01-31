@@ -1,3 +1,6 @@
+import {setFieldShown} from '@api/kintone/kintoneAPI';
+
 export const onEditOrCreateHandler = () => {
-	// レコード作成・編集画面
+	setFieldShown('notificationSettings', false);
+	setFieldShown('scheduledAlertDate', false);
 };

@@ -1,3 +1,6 @@
+import {setFieldShown} from '@api/kintone/kintoneAPI';
+
 export const onDetailShowHandler = () => {
-	// レコード詳細画面
+	// SetFieldShown('notificationSettings', false);
+	setFieldShown('reminderDate', false);
 };
