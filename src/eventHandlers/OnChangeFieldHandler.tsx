@@ -4,8 +4,8 @@ import {calcReminderDate} from '@/helpers/calcReminderDate';
 import {type KintoneEvent} from '@/types/types';
 import {getSpaceElement} from '@api/kintone/kintoneAPI';
 import {format} from 'date-fns/format';
-import {addDays} from 'date-fns/addDays';
 import {ReminderDateAnnouce} from '@/components/ReminderDateAnnouce';
+import {addWeeks} from 'date-fns/addWeeks';
 
 let root: Root | undefined;
 
@@ -35,8 +35,8 @@ export const OnChangeFieldHandler = (event: KintoneEvent) => {
 		<ReminderDateAnnouce reminderDate={ newDate } />,
 	);
 
-	// 再通知日を設定する(何も選択しない場合はデフォルト3日後に設定する)
-	scheduledAlertDate.value = newDate === 'default' ? format(addDays(new Date(), 3), 'yyyy-MM-dd') : newDate;
+	// 再通知日を設定する(何も選択しない場合はデフォルト1週間後に設定する)
+	scheduledAlertDate.value = newDate === 'default' ? format(addWeeks(new Date(), 1), 'yyyy-MM-dd') : newDate;
 
 	return event;
 };

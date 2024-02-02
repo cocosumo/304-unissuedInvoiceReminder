@@ -8,3 +8,7 @@ export type KintoneEvent = {
 };
 
 export type KeyOfDB = KUnissuedInvoiceReminder;
+
+export type KintoneAppRec = {
+	record: IUnissuedInvoiceReminder;
+};
