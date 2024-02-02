@@ -11,12 +11,19 @@ export type KEmployees = keyof IEmployees;
  * @param isActiveOnly デフォルト：true.
  * @returns
  */
-export const getEmployees = async (
+export const getEmployees = async ({
 	isActiveOnly = true,
-	statuses: EmpStatus[] = ['有効'],
+	statuses = ['有効'],
 	isSalesPosOnly = true,
 	isCocoOnly = true,
-) => {
+	isAccountingOnly = false,
+}: {
+	isActiveOnly?: boolean;
+	statuses?: EmpStatus[];
+	isSalesPosOnly?: boolean;
+	isCocoOnly?: boolean;
+	isAccountingOnly?: boolean;
+}) => {
 	const queryArray: string[] = [];
 
 	if (isActiveOnly) {
@@ -25,6 +32,10 @@ export const getEmployees = async (
 
 	if (isSalesPosOnly) {
 		queryArray.push('職種 in ( "営業","営業・工務", "工務")');
+	}
+
+	if (isAccountingOnly) {
+		queryArray.push('職種 in ( "経理")');
 	}
 
 	if (isCocoOnly) {
